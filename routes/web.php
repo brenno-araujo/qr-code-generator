@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes();
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', function () {
+        return view('badge.create');
+    });
 });
 
-Auth::routes();
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/cracha', function () {
+        return view('badge.show');
+    });
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
