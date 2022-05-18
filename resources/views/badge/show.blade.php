@@ -38,7 +38,7 @@
             <hr class="mt-0">
 
             <div class="text-center">
-                <img style="width: 30%" class="shadow-lg" src="{{ asset('img/usuario.jpg') }}">
+                <img style="width: 30%" class="shadow-lg rounded-circle" src="{{ asset('img/usuario.jpg') }}">
             </div>
 
             <div class="p-2 text-center" style="font-size: 12px">
@@ -48,7 +48,7 @@
 
             <hr>
 
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center align-items-center">
                 <div class="card" style="width: 75px; height: 75px">
                     <img src="{{route('code')}}" alt="" width="100%" height="100%">
                 </div>
@@ -56,4 +56,5 @@
 
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 @endsection
