@@ -49,7 +49,7 @@
             <hr>
 
             <div class="d-flex justify-content-center align-items-center">
-                <div class="card" style="width: 75px; height: 75px">
+                <div class="card" style="width: 90px; height: 90px">
                     <img src="{{route('code')}}" alt="" width="100%" height="100%">
                 </div>
             </div>
