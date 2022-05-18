@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Badge\BadgeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use LaravelQRCode\Facades\QRCode;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +22,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', function () {
         return view('badge.create');
     });
-});
+    
+    Route::get('/create', [BadgeController::class, 'create'])->name('create');
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('/cracha', function () {
-        return view('badge.show');
-    });
+    Route::get('/show', [BadgeController::class, 'show'])->name('show');
+    
+    Route::get('/qr-code', [BadgeController::class, 'showQrCode'])->name('code');
+    
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
